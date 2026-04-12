@@ -13,8 +13,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'MK NET VPN | Ultra Veloz em Todo o Brasil',
-  description: 'Conecte-se com ultra velocidade nas operadoras Vivo e Tim. A VPN mais rápida do Brasil.',
+  title: 'MK NET VPN - Internet Ultra Veloz Sem Limites',
+  description: 'A MK NET oferece a melhor conexão VPN para Vivo e Tim no Brasil. Navegue com ultra velocidade, segurança total e privacidade absoluta.',
+  keywords: ['VPN', 'MK NET', 'Internet Grátis', 'Ultra Velocidade', 'VPN Brasil', 'Vivo', 'Tim'],
+  authors: [{ name: 'MK NET' }],
+  viewport: 'width=device-width, initial-scale=1',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
