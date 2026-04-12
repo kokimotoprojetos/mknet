@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-outfit);
+}
+
+@layer utilities {
+  .bg-mesh {
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(37, 99, 235, 0.1) 0, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(29, 78, 216, 0.15) 0, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(30, 64, 175, 0.1) 0, transparent 50%);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
