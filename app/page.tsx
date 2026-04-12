@@ -51,17 +51,17 @@ export default function LandingPage() {
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg overflow-hidden border border-blue-400/30 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+            <div className="w-10 h-10 flex-shrink-0 rounded-lg overflow-hidden border border-blue-400/30 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
               <Image 
                 src="/logo.png" 
                 alt="MK NET Logo" 
                 width={40} 
                 height={40} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-1"
               />
             </div>
-            <span className="font-display font-bold text-2xl tracking-tight">
-              MK <span className="text-blue-500">NET</span>
+            <span className="font-display font-black text-2xl tracking-tighter">
+              MK <span className="text-blue-500 uppercase">Net</span>
             </span>
           </div>
 
@@ -171,7 +171,7 @@ export default function LandingPage() {
                       alt="MK NET Logo" 
                       width={112} 
                       height={112} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
 
