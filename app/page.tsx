@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
+import { User, Lock } from 'lucide-react';
 
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,9 +50,15 @@ export default function LandingPage() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center border border-blue-400/30 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
-              <ShieldCheck className="text-white w-6 h-6" />
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg overflow-hidden border border-blue-400/30 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+              <Image 
+                src="/logo.png" 
+                alt="MK NET Logo" 
+                width={40} 
+                height={40} 
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="font-display font-bold text-2xl tracking-tight">
               MK <span className="text-blue-500">NET</span>
@@ -155,32 +162,61 @@ export default function LandingPage() {
               <div className="relative z-10 w-full aspect-square max-w-[500px] mx-auto">
                 {/* Simulated App Interface or Logo */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent rounded-full blur-3xl animate-pulse" />
-                <div className="relative w-full h-full glass rounded-[40px] border border-white/10 p-8 flex flex-col items-center justify-center shadow-2xl">
-                  <div className="w-32 h-32 bg-blue-600 rounded-3xl flex items-center justify-center mb-8 shadow-[0_0_50px_rgba(37,99,235,0.5)]">
-                    <ShieldCheck className="w-16 h-16 text-white" />
+                <div className="relative w-full h-full glass rounded-[40px] border border-white/10 p-8 flex flex-col items-center justify-center shadow-2xl overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-b from-blue-600/10 to-transparent pointer-events-none" />
+                  
+                  <div className="w-28 h-28 rounded-3xl overflow-hidden mb-8 shadow-[0_0_40px_rgba(37,99,235,0.4)] relative z-10">
+                    <Image 
+                      src="/logo.png" 
+                      alt="MK NET Logo" 
+                      width={112} 
+                      height={112} 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="space-y-4 w-full">
-                    <div className="h-12 w-full bg-white/5 rounded-xl flex items-center px-4 justify-between">
-                      <span className="text-sm text-gray-400">Status</span>
-                      <span className="text-sm text-green-400 font-bold flex items-center gap-2">
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-ping" />
-                        Conectado
-                      </span>
+
+                  <div className="space-y-4 w-full relative z-10">
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                        <User className="w-4 h-4" />
+                      </div>
+                      <input 
+                        type="text" 
+                        placeholder="Usuário" 
+                        className="w-full h-11 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-sm focus:border-blue-500/50 outline-none transition-colors placeholder:text-gray-600"
+                        readOnly
+                        value="mk_user_2024"
+                      />
                     </div>
-                    <div className="h-12 w-full bg-white/5 rounded-xl flex items-center px-4 justify-between">
-                      <span className="text-sm text-gray-400">Operadora</span>
-                      <span className="text-sm text-blue-400 font-bold">VIVO / TIM</span>
+
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                        <Lock className="w-4 h-4" />
+                      </div>
+                      <input 
+                        type="password" 
+                        placeholder="Senha" 
+                        className="w-full h-11 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-sm focus:border-blue-500/50 outline-none transition-colors"
+                        readOnly
+                        value="••••••••••••"
+                      />
                     </div>
-                    <div className="pt-4">
-                      <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+
+                    <div className="pt-2">
+                       <button className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-lg shadow-blue-600/20 transition-all active:scale-95">
+                         CONECTAR
+                       </button>
+                    </div>
+
+                    <div className="pt-2">
+                      <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                         <motion.div 
                           initial={{ width: 0 }}
-                          animate={{ width: '100%' }}
-                          transition={{ duration: 2, repeat: Infinity }}
+                          animate={{ width: '45%' }}
                           className="h-full bg-blue-500"
                         />
                       </div>
-                      <p className="text-center text-[10px] text-gray-500 mt-2 uppercase tracking-widest">Otimizando Conexão...</p>
+                      <p className="text-center text-[9px] text-gray-500 mt-2 uppercase tracking-widest">Pronto para conectar</p>
                     </div>
                   </div>
                 </div>
@@ -327,8 +363,16 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="text-blue-500 w-6 h-6" />
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg overflow-hidden border border-white/10">
+              <Image 
+                src="/logo.png" 
+                alt="MK NET Logo" 
+                width={32} 
+                height={32} 
+                className="w-full h-full object-cover"
+              />
+            </div>
             <span className="font-display font-bold text-xl">MK NET</span>
           </div>
           <p className="text-gray-500 text-sm">
