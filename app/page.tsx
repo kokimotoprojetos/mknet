@@ -119,7 +119,7 @@ export default function LandingPage() {
                 </span>
               </h1>
               <p className="text-gray-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
-                A MK NET oferece a conexão mais estável e veloz para usuários Vivo e Tim. 
+                A MK NET oferece a conexão mais estável e veloz para todas as operadoras: Vivo, Tim, Claro e Oi. 
                 Segurança total e privacidade absoluta em qualquer lugar do país.
               </p>
               
@@ -304,10 +304,10 @@ export default function LandingPage() {
               </p>
               <ul className="space-y-4">
                 {[
-                  "Otimização exclusiva para VIVO",
-                  "Conexão estável na rede TIM",
-                  "Bypass de limites de franquia",
-                  "IPs brasileiros de alta qualidade"
+                  "Suporte total a todas as operadoras",
+                  "Otimizado para Vivo, Tim, Claro e Oi",
+                  "Bypass inteligente de franquia",
+                  "IPs brasileiros de altíssima velocidade"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-gray-200">
                     <CheckCircle2 className="text-blue-500 w-5 h-5" />
@@ -318,11 +318,19 @@ export default function LandingPage() {
             </div>
             <div className="flex-1 grid grid-cols-2 gap-6 w-full">
               <div className="p-8 rounded-3xl glass border border-white/10 flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition-colors">
-                <div className="w-20 h-20 bg-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">VIVO</div>
+                <div className="w-20 h-20 bg-[#660099] rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(102,0,153,0.4)]">VIVO</div>
                 <p className="font-bold">100% Compatível</p>
               </div>
               <div className="p-8 rounded-3xl glass border border-white/10 flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition-colors">
-                <div className="w-20 h-20 bg-blue-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl">TIM</div>
+                <div className="w-20 h-20 bg-[#002f6c] rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(0,47,108,0.4)]">TIM</div>
+                <p className="font-bold">100% Compatível</p>
+              </div>
+              <div className="p-8 rounded-3xl glass border border-white/10 flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition-colors">
+                <div className="w-20 h-20 bg-[#e30613] rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(227,6,19,0.4)]">CLARO</div>
+                <p className="font-bold">100% Compatível</p>
+              </div>
+              <div className="p-8 rounded-3xl glass border border-white/10 flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition-colors">
+                <div className="w-20 h-20 bg-[#f18800] rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(241,136,0,0.4)]">OI</div>
                 <p className="font-bold">100% Compatível</p>
               </div>
             </div>

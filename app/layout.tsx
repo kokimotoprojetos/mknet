@@ -14,8 +14,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: 'MK NET VPN - Internet Ultra Veloz Sem Limites',
-  description: 'A MK NET oferece a melhor conexão VPN para Vivo e Tim no Brasil. Navegue com ultra velocidade, segurança total e privacidade absoluta.',
-  keywords: ['VPN', 'MK NET', 'Internet Grátis', 'Ultra Velocidade', 'VPN Brasil', 'Vivo', 'Tim'],
+  description: 'A MK NET oferece a melhor conexão VPN para todas as operadoras (Vivo, Tim, Claro e Oi) no Brasil. Navegue com ultra velocidade, segurança total e privacidade absoluta.',
+  keywords: ['VPN', 'MK NET', 'Internet Grátis', 'Ultra Velocidade', 'VPN Brasil', 'Vivo', 'Tim', 'Claro', 'Oi', 'todas as operadoras'],
   authors: [{ name: 'MK NET' }],
   viewport: 'width=device-width, initial-scale=1',
 };
