@@ -19,6 +19,14 @@ import { User, Lock } from 'lucide-react';
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const trackDownload = async () => {
+    try {
+      await fetch('/api/track-download', { method: 'POST' });
+    } catch (err) {
+      console.error('Error tracking download:', err);
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,7 +77,7 @@ export default function LandingPage() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Recursos</a>
             <a href="#operators" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">Operadoras</a>
-            <a href="/Mknet.apk" download="Mknet.apk" className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-600/20">
+            <a href="/Mknet.apk" download="Mknet.apk" onClick={trackDownload} className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-600/20">
               Download App
             </a>
           </div>
@@ -92,7 +100,7 @@ export default function LandingPage() {
           >
             <a href="#features" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-300">Recursos</a>
             <a href="#operators" onClick={() => setIsMenuOpen(false)} className="text-lg font-medium text-gray-300">Operadoras</a>
-            <a href="/Mknet.apk" download="Mknet.apk" onClick={() => setIsMenuOpen(false)} className="w-full py-4 bg-blue-600 text-white rounded-xl text-center font-bold">
+            <a href="/Mknet.apk" download="Mknet.apk" onClick={() => { setIsMenuOpen(false); trackDownload(); }} className="w-full py-4 bg-blue-600 text-white rounded-xl text-center font-bold">
               Download App
             </a>
           </motion.div>
@@ -127,6 +135,7 @@ export default function LandingPage() {
                 <a 
                   href="/Mknet.apk" 
                   download="Mknet.apk"
+                  onClick={trackDownload}
                   className="group flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold text-lg transition-all hover:scale-105 shadow-xl shadow-blue-600/25"
                 >
                   <Download className="w-5 h-5 group-hover:animate-bounce" />
@@ -344,6 +353,7 @@ export default function LandingPage() {
                 <a 
                   href="/Mknet.apk"
                   download="Mknet.apk"
+                  onClick={trackDownload}
                   className="w-full sm:w-auto flex items-center justify-center gap-4 px-10 py-5 bg-white text-black rounded-2xl font-bold text-xl hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 shadow-2xl"
                 >
                   <Smartphone className="w-6 h-6" />
