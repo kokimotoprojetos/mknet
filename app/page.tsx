@@ -324,7 +324,7 @@ export default function LandingPage() {
                     src="/vivo.webp" 
                     alt="Vivo Logo" 
                     fill 
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <p className="font-bold">100% Compatível</p>
@@ -335,7 +335,7 @@ export default function LandingPage() {
                     src="/tim.webp" 
                     alt="Tim Logo" 
                     fill 
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <p className="font-bold">100% Compatível</p>
@@ -346,7 +346,7 @@ export default function LandingPage() {
                     src="/claro.webp" 
                     alt="Claro Logo" 
                     fill 
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <p className="font-bold">100% Compatível</p>
@@ -357,7 +357,7 @@ export default function LandingPage() {
                     src="/oi.webp" 
                     alt="Oi Logo" 
                     fill 
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <p className="font-bold">100% Compatível</p>
