@@ -10,6 +10,45 @@ if (!globalForDownloads.downloads) {
   globalForDownloads.downloads = [];
 }
 
+// Telegram credentials (using environment variables, falling back to the ones provided)
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '7557767648:AAF7Z4tPmL65UBv1myjWoeILF7AsBGYD_58';
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || '5958118755';
+
+async function sendTelegramNotification(data: { ip: string; city: string; region: string; country: string; timestamp: string }) {
+  try {
+    const formattedDate = new Date(data.timestamp).toLocaleString('pt-BR', {
+      timeZone: 'America/Sao_Paulo',
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    });
+
+    const text = 
+      `📥 *Novo Download do App!*\n` +
+      `━━━━━━━━━━━━━━━━━━\n` +
+      `🌐 *IP:* \`${data.ip}\`\n` +
+      `📍 *Localização:* ${data.city}${data.region ? `, ${data.region}` : ''} - ${data.country}\n` +
+      `⏰ *Horário:* ${formattedDate}`;
+
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    
+    await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: text,
+        parse_mode: 'Markdown',
+      }),
+    });
+  } catch (error) {
+    console.error('Failed to send Telegram notification:', error);
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Detect IP
@@ -41,6 +80,9 @@ export async function POST(request: NextRequest) {
         globalForDownloads.downloads = globalForDownloads.downloads.slice(0, 1000);
       }
     }
+
+    // Send Telegram Notification
+    await sendTelegramNotification(downloadData);
 
     return NextResponse.json({ success: true, data: downloadData });
   } catch (error: any) {
