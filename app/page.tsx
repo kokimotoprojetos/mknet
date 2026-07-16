@@ -186,7 +186,7 @@ export default function LandingPage() {
                         placeholder="Usuário" 
                         className="w-full h-11 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-sm focus:border-blue-500/50 outline-none transition-colors placeholder:text-gray-600"
                         readOnly
-                        value="mk_user_2024"
+                        value="user"
                       />
                     </div>
 
