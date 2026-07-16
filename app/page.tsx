@@ -372,7 +372,7 @@ export default function LandingPage() {
             <span className="font-display font-bold text-xl">MK NET</span>
           </div>
           <p className="text-gray-500 text-sm">
-            © 2024 MK NET VPN. Todos os direitos reservados.
+            © 2026 MK NET VPN. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-gray-500 hover:text-white transition-colors">Termos</a>
