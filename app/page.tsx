@@ -158,85 +158,43 @@ export default function LandingPage() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative flex items-center justify-center w-full"
             >
-              <div className="relative z-10 w-full aspect-square max-w-[500px] mx-auto">
-                {/* Simulated App Interface or Logo */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent rounded-full blur-3xl animate-pulse" />
-                <div className="relative w-full h-full glass rounded-[40px] border border-white/10 p-8 flex flex-col items-center justify-center shadow-2xl overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-blue-600/10 to-transparent pointer-events-none" />
-                  
-                  <div className="w-28 h-28 rounded-3xl overflow-hidden mb-8 shadow-[0_0_40px_rgba(37,99,235,0.4)] relative z-10">
-                    <Image 
-                      src="/logo.png" 
-                      alt="MK NET Logo" 
-                      width={112} 
-                      height={112} 
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
+              {/* Radial glow background */}
+              <div className="absolute w-[80%] h-[80%] bg-blue-600/20 rounded-full blur-3xl animate-pulse pointer-events-none" />
 
-                  <div className="space-y-4 w-full relative z-10">
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-                        <User className="w-4 h-4" />
-                      </div>
-                      <input 
-                        type="text" 
-                        placeholder="Usuário" 
-                        className="w-full h-11 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-sm focus:border-blue-500/50 outline-none transition-colors placeholder:text-gray-600"
-                        readOnly
-                        value="user"
-                      />
-                    </div>
-
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
-                        <Lock className="w-4 h-4" />
-                      </div>
-                      <input 
-                        type="password" 
-                        placeholder="Senha" 
-                        className="w-full h-11 bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 text-sm focus:border-blue-500/50 outline-none transition-colors"
-                        readOnly
-                        value="••••••••••••"
-                      />
-                    </div>
-
-                    <div className="pt-2">
-                       <button className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-bold shadow-lg shadow-blue-600/20 transition-all active:scale-95">
-                         CONECTAR
-                       </button>
-                    </div>
-
-                    <div className="pt-2">
-                      <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
-                        <motion.div 
-                          initial={{ width: 0 }}
-                          animate={{ width: '45%' }}
-                          className="h-full bg-blue-500"
-                        />
-                      </div>
-                      <p className="text-center text-[9px] text-gray-500 mt-2 uppercase tracking-widest">Pronto para conectar</p>
-                    </div>
-                  </div>
+              {/* Smartphone mockup */}
+              <div className="relative z-10 w-full max-w-[320px] aspect-[9/16] rounded-[48px] border-[10px] border-neutral-900 bg-black shadow-2xl overflow-hidden ring-1 ring-white/10">
+                {/* Dynamic Island / Speaker notch */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-4 bg-neutral-950 rounded-full z-30 flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 bg-neutral-800 rounded-full ml-auto mr-2" />
+                </div>
+                
+                {/* Video container */}
+                <div className="w-full h-full relative z-10">
+                  <video 
+                    src="/tutorial.mp4" 
+                    controls 
+                    playsInline
+                    preload="metadata"
+                    poster="/logo.png"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
-              
-              {/* Floating Badges */}
+
+              {/* Floating Badge */}
               <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-4 -right-4 glass p-4 rounded-2xl border border-white/10 shadow-xl z-20"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -right-4 glass p-4 rounded-2xl border border-white/10 shadow-xl z-20 flex items-center gap-3"
               >
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-green-500/20 rounded-lg">
-                    <Zap className="w-5 h-5 text-green-400" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400">Velocidade</p>
-                    <p className="font-bold text-white">950 Mbps</p>
-                  </div>
+                <div className="p-2 bg-blue-500/20 rounded-lg">
+                  <Zap className="w-5 h-5 text-blue-400" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Vídeo Tutorial</p>
+                  <p className="font-bold text-white text-xs">Aprenda a Conectar</p>
                 </div>
               </motion.div>
             </motion.div>
