@@ -319,19 +319,47 @@ export default function LandingPage() {
             </div>
             <div className="flex-1 grid grid-cols-2 gap-6 w-full">
               <div className="p-8 rounded-3xl glass border border-white/10 flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition-colors">
-                <div className="w-20 h-20 bg-[#660099] rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(102,0,153,0.4)]">VIVO</div>
+                <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(102,0,153,0.4)] relative">
+                  <Image 
+                    src="/vivo.webp" 
+                    alt="Vivo Logo" 
+                    fill 
+                    className="object-cover"
+                  />
+                </div>
                 <p className="font-bold">100% Compatível</p>
               </div>
               <div className="p-8 rounded-3xl glass border border-white/10 flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition-colors">
-                <div className="w-20 h-20 bg-[#002f6c] rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(0,47,108,0.4)]">TIM</div>
+                <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(0,47,108,0.4)] relative">
+                  <Image 
+                    src="/tim.webp" 
+                    alt="Tim Logo" 
+                    fill 
+                    className="object-cover"
+                  />
+                </div>
                 <p className="font-bold">100% Compatível</p>
               </div>
               <div className="p-8 rounded-3xl glass border border-white/10 flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition-colors">
-                <div className="w-20 h-20 bg-[#e30613] rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(227,6,19,0.4)]">CLARO</div>
+                <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(227,6,19,0.4)] relative">
+                  <Image 
+                    src="/claro.webp" 
+                    alt="Claro Logo" 
+                    fill 
+                    className="object-cover"
+                  />
+                </div>
                 <p className="font-bold">100% Compatível</p>
               </div>
               <div className="p-8 rounded-3xl glass border border-white/10 flex flex-col items-center justify-center gap-4 hover:bg-white/10 transition-colors">
-                <div className="w-20 h-20 bg-[#f18800] rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-[0_0_20px_rgba(241,136,0,0.4)]">OI</div>
+                <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(241,136,0,0.4)] relative">
+                  <Image 
+                    src="/oi.webp" 
+                    alt="Oi Logo" 
+                    fill 
+                    className="object-cover"
+                  />
+                </div>
                 <p className="font-bold">100% Compatível</p>
               </div>
             </div>
